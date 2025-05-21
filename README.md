@@ -1,54 +1,40 @@
-# React + TypeScript + Vite
+# 15 Birthday Invitation Card
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+I wanted to keep practicing context in React, and my niece asked me to make a birthday invitation card for her 15th birthday, so I made a first version with the following card.
 
-Currently, two official plugins are available:
+It greets the guest with 3 types of greetings depending on the time of day: Good morning, Good afternoon, and Good evening.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The background color can change depending on the time of day — this was an idea I implemented, but I haven’t added the CSS styles yet, so currently, all three look the same.
 
-## Expanding the ESLint configuration
+It uses the Google Maps API to show the location of the venue, the WhatsApp API to confirm with the host that you're going to attend, and the Weather API to display the daily forecast until the birthday date arrives.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+You can check the preview of the card:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+[https://tarjeta.sabatie.com.ar/](https://tarjeta.sabatie.com.ar/)
+
+If you want to run the project on your local:
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+You will need to create a .env file in the root of the project with your own settings. These can be real or mock values if you're just testing the app:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```tsx
+VITE_WHATSAPP=       # WhatsApp number or mockup link
+VITE_LOCATION=       # Google Maps link or coordinates
+VITE_CUMPLE=         # Birthday date (e.g., 2025-07-20)
+VITE_CBU_CVU=        # Optional: CBU/CVU or alias for gifts
+VITE_CLIMA_API_KEY=  # Your WeatherAPI key (https://api.weatherapi.com)
+```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```
+
+The css for the main image effect I took it from
+
+[Alvaro Montoro - codepen](https://codepen.io/alvaromontoro/pen/VwVNQxg)
+
+I included his licence under my licence in the licence file as requested. Thanks for that cool effect.
+
 ```
