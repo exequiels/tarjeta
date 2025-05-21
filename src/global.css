@@ -106,7 +106,7 @@ body {
 }
 
 .fondo-imagen {
-  background-image: url('./images/snake_pattern.webp');
+  background-image: url('/images/snake_pattern.webp');
   background-size: auto;
   background-position: center;
 }
