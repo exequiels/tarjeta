@@ -1,33 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect } from 'react'
+import 'primereact/resources/themes/soho-dark/theme.css'
+import 'primereact/resources/primereact.min.css'
+import 'primeicons/primeicons.css'
+import 'primeflex/primeflex.css'
+import { useTimeContext } from './context/TimeContext'
+import { PrimeReactProvider } from 'primereact/api'
+import Layout from './components/Layout'
+import Lugar from './components/Lugar'
+import Galeria from './components/Galeria'
+import Header from './components/Header'
+import Perks from './components/Perks'
+import Faltan from './components/Faltan'
+import Regalo from './components/Regalo'
+import Footer from './components/Footer'
+import Sabatie from './components/Sabatie'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const value = {
+    ripple: true,
+  }
+
+  const { horaDelDia } = useTimeContext()
+
+  useEffect(() => {
+    document.body.classList.remove('dedia', 'detarde', 'denoche')
+    document.body.classList.add(horaDelDia)
+  }, [horaDelDia])
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <PrimeReactProvider value={value}>
+        <Layout>
+          <Header />
+          <Faltan />
+          <Lugar />
+          <Galeria />
+          <Perks />
+          <Regalo />
+          <Footer />
+          <Sabatie />
+        </Layout>
+      </PrimeReactProvider>
     </>
   )
 }

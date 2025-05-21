@@ -1,0 +1,159 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body.dedia {
+  --color-primario: #fff;
+  --color-divisor: #a28af5;
+  --fondo-foto: #234962;
+  --color-divisor-seccion: #d4af37;
+  --bg: #0f123b;
+  --bg-central: #000;
+  --font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif;
+  --font-size-base: 22px;
+  --footer: #ffffff;
+
+  --a-color: #1d4ed8;
+  --a-hover: #1e40af;
+  --a-decoration: underline;
+  --a-font-weight: 400;
+}
+
+body.detarde {
+  --color-primario: #fff;
+  --color-divisor: #a28af5;
+  --fondo-foto: #234962;
+  --color-divisor-seccion: #d4af37;
+  --bg: #0f123b;
+  --bg-central: #000;
+  --font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif;
+  --font-size-base: 22px;
+  --footer: #ffffff;
+
+  --a-color: #1d4ed8;
+  --a-hover: #1e40af;
+  --a-decoration: underline;
+  --a-font-weight: 400;
+}
+
+body.denoche {
+  --color-primario: #fff;
+  --color-divisor: #a28af5;
+  --fondo-foto: #234962;
+  --color-divisor-seccion: #d4af37;
+  --bg: #0f123b;
+  --bg-central: #000;
+  --font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif;
+  --font-size-base: 22px;
+  --footer: #ffffff;
+
+  --a-color: #557ff5;
+  --a-hover: #1e40af;
+  --a-decoration: underline;
+  --a-font-weight: 400;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--color-primario);
+  font-family: var(--font);
+  font-size: var(--font-size-base, 16px);
+}
+
+.bg-central {
+  background-color: var(--bg-central);
+  box-shadow: 0px 0px 40px 15px rgba(162, 138, 245, 0.5);
+}
+
+.divider {
+  width: 100%;
+  margin: 1rem auto;
+  border-color: var(--color-divisor-seccion);
+  opacity: 0.5;
+}
+
+.divider-centered {
+  width: 70%;
+  margin: 1rem auto;
+  border-color: var(--color-divisor);
+  opacity: 0.5;
+}
+
+.img-glow {
+  box-shadow: 0px 0px 20px 5px var(--color-divisor);
+}
+
+.centrado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  flex-direction: column;
+}
+
+.modales {
+  width: 90vw;
+  max-width: 50rem;
+}
+
+@media (min-width: 768px) {
+  .modales {
+    width: 25rem;
+  }
+}
+
+.fondo-imagen {
+  background-image: url('./images/snake_pattern.webp');
+  background-size: auto;
+  background-position: center;
+}
+
+figure {
+  --c: 50px;
+  --p: 30px;
+  --d: 10px;
+  background: red;
+  display: inline-block;
+  padding: var(--p);
+  background: radial-gradient(farthest-side at 0 0, #000, #0000) 0 0 / var(--c)
+      var(--c),
+    radial-gradient(farthest-side at 100% 100%, #000, #0000) 100% 100% /
+      var(--c) var(--c),
+    linear-gradient(#fff 0 0) 50% 50% / calc(100% - var(--p))
+      calc(100% - var(--p)),
+    linear-gradient(#0000, #000 25% 75%, #0000) 50% 50% / calc(100% - var(--p))
+      calc(100% - var(--d)),
+    linear-gradient(90deg, #0000, #000 25% 75%, #0000) 50% 50% /
+      calc(100% - var(--d)) calc(100% - var(--p)),
+    radial-gradient(farthest-side at 0 100%, #00000018, #0000)
+      calc(100% - var(--d) * 0.5) calc(var(--d) * 0.5) / var(--d) var(--d),
+    radial-gradient(farthest-side at 100% 0, #00000018, #0000)
+      calc(var(--d) * 0.5) calc(100% - var(--d) * 0.5) / var(--d) var(--d);
+  background-repeat: no-repeat;
+  clip-path: polygon(
+    0 var(--c),
+    var(--c) 0,
+    100% 0,
+    100% calc(100% - var(--c)),
+    calc(100% - var(--c)) 100%,
+    0 100%
+  );
+}
+
+.bg-foto {
+  background-color: var(--fondo-foto);
+}
+
+/* demo */
+figure:nth-of-type(1) img {
+  width: 300px;
+}
+
+img {
+  object-fit: cover;
+}
