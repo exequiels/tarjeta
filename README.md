@@ -6,7 +6,7 @@ It greets the guest with 3 types of greetings depending on the time of day: Good
 
 The background color can change depending on the time of day — this was an idea I implemented, but I haven’t added the CSS styles yet, so currently, all three look the same.
 
-It uses the Google Maps API to show the location of the venue, the WhatsApp API to confirm with the host that you're going to attend, and the Weather API to display the daily forecast until the birthday date arrives.
+It uses the Google Maps location to show the location of the venue, WhatsApp to confirm with the host that you're going to attend, and the Weather API to display the daily forecast until the birthday date arrives.
 
 You can check the preview of the card:
 
