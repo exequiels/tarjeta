@@ -26,7 +26,7 @@ VITE_WHATSAPP=       # WhatsApp number or mockup link
 VITE_LOCATION=       # Google Maps link or coordinates
 VITE_CUMPLE=         # Birthday date (e.g., 2025-07-20)
 VITE_CBU_CVU=        # Optional: CBU/CVU or alias for gifts
-VITE_CLIMA_API_KEY=  # Your WeatherAPI key (https://api.weatherapi.com)
+API_KEY_CLIMA=  # Your WeatherAPI key (https://api.weatherapi.com)
 ```
 
 ```
