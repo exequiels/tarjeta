@@ -25,24 +25,33 @@ const Footer = () => {
   }
 
   useEffect(() => {
-    const apiKey = config.VITE_CLIMA_API_KEY
     const daysUntil = getDaysUntilBirthday(birthdayDate)
 
     const fetchCurrent = async () => {
-      const res = await fetch(
-        `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}&lang=es`
-      )
-      const data: WeatherAPIResponseCurrent = await res.json()
-      setCurrentWeather(data)
+      try {
+        const res = await fetch(
+          `/api/clima.php?type=current&q=${location}&lang=es`
+        )
+        if (!res.ok) throw new Error('Error al obtener el clima actual')
+        const data: WeatherAPIResponseCurrent = await res.json()
+        setCurrentWeather(data)
+      } catch (error) {
+        console.error('Error en clima actual:', error)
+      }
     }
 
     const fetchBirthdayForecast = async () => {
       if (daysUntil <= 14) {
-        const res = await fetch(
-          `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&dt=${birthdayDate}&lang=es`
-        )
-        const data: WeatherAPIResponseForecast = await res.json()
-        setBirthdayWeather(data)
+        try {
+          const res = await fetch(
+            `/api/clima.php?type=forecast&q=${location}&dt=${birthdayDate}&lang=es`
+          )
+          if (!res.ok) throw new Error('Error al obtener el pronóstico')
+          const data: WeatherAPIResponseForecast = await res.json()
+          setBirthdayWeather(data)
+        } catch (error) {
+          console.error('Error en pronóstico:', error)
+        }
       }
     }
 
