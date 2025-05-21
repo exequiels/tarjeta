@@ -1,25 +1,25 @@
 const Sabatie = () => {
   const redesSociales = [
-    { id: 1, pipi: 'pi-github', link: 'https://github.com/exequiels/' },
     {
-      id: 2,
-      pipi: 'pi-facebook',
-      link: 'https://www.facebook.com/sabatie.dev',
-    },
-    {
-      id: 3,
-      pipi: 'pi-instagram',
-      link: 'https://www.instagram.com/sabatie.dev',
-    },
-    {
-      id: 4,
+      id: 1,
       pipi: 'pi-youtube',
       link: 'https://www.youtube.com/@ExequielsCodetoLife',
     },
     {
-      id: 5,
+      id: 2,
       pipi: 'pi-linkedin',
       link: 'https://www.linkedin.com/in/exequiel-sabatie/',
+    },
+    { id: 3, pipi: 'pi-github', link: 'https://github.com/exequiels/' },
+    {
+      id: 4,
+      pipi: 'pi-facebook',
+      link: 'https://www.facebook.com/sabatie.dev',
+    },
+    {
+      id: 5,
+      pipi: 'pi-instagram',
+      link: 'https://www.instagram.com/sabatie.dev',
     },
   ]
 
