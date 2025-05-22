@@ -1,7 +1,9 @@
+import config from '../config'
 import { useTimeContext } from '../context/TimeContext'
 
 const Header = () => {
   const { horaDelDia } = useTimeContext()
+  const cumple = config.VITE_CUMPLE
 
   const getSaludo = (time: string) => {
     switch (time) {
@@ -44,7 +46,7 @@ const Header = () => {
             {saludo}
           </div>
           <hr className="divider-centered divider-dashed" />
-          <div>01.05.1984</div>
+          <div>{cumple}</div>
           <hr className="divider-centered divider-dashed" />
           <div className="block text-6xl font-bold mb-1">XLI</div>
           <div className="block text-6xl font-bold mb-1">Exequiel Sabatié</div>
